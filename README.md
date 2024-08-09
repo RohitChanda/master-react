@@ -164,7 +164,7 @@ Which gets installed is like a database for the npm. Every dependency in node_mo
 - JSX transpiled before it reached to JS engine. And JSX code is transpiled by **Parcel by using BABEL**.
 Babel is a Javascript compiler
 
-## What are the Rules of JSX:
+## Q) What are the Rules of JSX:
 
 **1. Return a single root element:**
 
@@ -252,6 +252,48 @@ const HeadingComponent = () => (
     </div>
 )
 ```
+
+
+## Q ) How to use JavaScript code inside JSX?
+Inside a React Component when ```{}``` parenthesis is present we can write any JavaScript expression inside it.
+
+```
+const number = 10000;
+const HeadingComponent = () => (
+    <div id="containter">
+        {number}
+        <h1>Namaste React</h1>
+    </div>
+)
+```
+
+## Q ) How to call React Element in JSX?
+```
+const elem = <span> React Element </span>
+const HeadingComponent = () => (
+    <div id="containter">
+        {elem}
+        <h1>This is Namaste React</h1>
+    </div>
+);
+```
+
+## Q ) What will happen if we call 2 elements inside each other?
+If we put 2 components inside each other, then it will go into an infinite loop and the stack will overflow. It will freeze your browser, so it’s not recommended to do so.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
