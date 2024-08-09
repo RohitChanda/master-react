@@ -150,3 +150,56 @@ In package.json we have information about the generic version of installed packa
 
 ## What is node_modules:
 Which gets installed is like a database for the npm. Every dependency in node_module will have its package.json. Node modules are very heavy so we should always put this in git ignore.
+
+
+## Q) What is JSX(JavaScript XML, or JavaScript Syntax eXtension) (Writing Markup with JSX)
+- JSX is a syntax extension for JavaScript that lets you write HTML-like markup inside a JavaScript file. 
+- JSX is HTML-like or XML-like syntax. JSX stands for JavaScript XML. It's a syntax extension for JavaScript. Although there are other ways to write components, most React developers prefer to use JSX, and most codebases use it.
+- JSX and React are two separate things. They’re often used together, but you can use them independently of each other. JSX is a syntax extension, while React is a JavaScript library.
+- JSX and ReactElements are also not the same, JSX is syntax and ReactElement is an Object.
+  
+    ```const headingJSx = <h1> Namaste React </h1>;```
+  
+- It is not a valid  pure Javascript.Javascript doesn't have jsx built inside it, and the JS engine doesn't understand jsx.Its only understands ECMAScript.
+- JSX transpiled before it reached to JS engine. And JSX code is transpiled by **Parcel by using BABEL**.
+Babel is a Javascript compiler
+
+## What are the Rules of JSX:
+
+**1. Return a single root element:**
+
+To return multiple elements from a component, wrap them with a single parent tag. For example
+
+```js
+const HomePage = () => {
+    return (
+        <div>
+            
+        </div>
+    )
+}
+
+const AboutPage = () => {
+    return (
+        <>
+            
+        </>
+    )
+}
+```
+**2. Close all Tags:**
+
+JSX requires tags to be explicitly closed: self-closing tags like ```<img>``` must become ```<img />```.
+
+**3.camelCase:**
+
+Write code in camelCase in the most of the things! 
+
+
+## Q) What are the Difference b/w React.createElement and JSX element:
+React.createElement()   === >>  ReactElement( js object ) ==== >> HTMLELEMENT(render).
+
+JSX == >> Babel transpile it to React.createElement()   === >>  ReactElement( js object ) ==== >> HTMLELEMENT(render).
+
+***Babel converts this JSX to React.createElement, then React understands the whole code***
+
