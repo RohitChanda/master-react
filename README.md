@@ -71,7 +71,7 @@ allows the script to access resources from the server hosting
 the script, such as making HTTP requests or accessing data.
 
 
-## React.createElement() : 
+## React.createElement() 
 createElement lets you create a React element. It serves as an alternative to writing JSX.
 
 ```const element = createElement(type, props, ...children);```
@@ -86,7 +86,20 @@ And if we do ```console.log(heading)```  → it will print an **Object** in the 
 
 <img width="535" alt="image" src="https://github.com/user-attachments/assets/1ed81faa-8a53-43b7-af5e-6d16c2edb720">
 
+## ReactDOM.createRoot() 
+```createRoot(domNode, options?)``` Call createRoot to create a React root for displaying content inside a browser DOM element.
 
+```const root = ReactDOM.createRoot(document.getElementById('root'));```
+
+## render()
+render method renders a piece of JSX (“React node”) into a browser DOM node(root node).
+
+```root.render(heading);```
+
+
+
+## What is the full form of npm?
+Everything but not the Node package manager. npm does not have a full form.
 
 
 
