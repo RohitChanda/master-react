@@ -201,5 +201,47 @@ React.createElement()   === >>  ReactElement( js object ) ==== >> HTMLELEMENT(re
 
 JSX == >> Babel transpile it to React.createElement()   === >>  ReactElement( js object ) ==== >> HTMLELEMENT(render).
 
-***Babel converts this JSX to React.createElement, then React understands the whole code***
+***Babel converts this JSX to React.createElement, then React understands the whole code***.
+
+
+
+
+
+## Q ) What are Components?
+There are 2 types of components:
+
+**1.Class-based Components:** - Old way of writing code, used rarely in industry.
+
+**2.Functional Components:** - New way of writing code, most commonly used
+
+## Q ) What is a React Functional Components?
+It is just a JavaScript Function that returns some JSX or a react element.
+
+Always name React Functional Component with Capital Letters, otherwise you will confuse it with normal function
+
+```
+const HeadingComponent1 = () => ( <h1>Namaste</h1> );
+
+const HeadingComponent2 = () => {
+    return <h1>Namaste</h1>
+}
+const HeadingComponent3 = () => <h1>Namaste</h1>
+```
+
+To render a functional component we call them ```<Heading1 />```. This is the syntax that **Babel understands**.
+
+You can also call them using these ways,
+
+```<Title></Title>``` 
+
+or
+
+```{Title()}```
+
+
+
+
+
+
+
 
