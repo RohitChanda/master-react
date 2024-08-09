@@ -282,24 +282,23 @@ const HeadingComponent = () => (
 If we put 2 components inside each other, then it will go into an infinite loop and the stack will overflow. It will freeze your browser, so it’s not recommended to do so.
 
 
-## Q) Advantages of using JSX.
-**1.Sanitizes the data:**
+## 22. Advantages of using JSX.
 
+**1.Sanitizes the data:**
 If someone gets access to your JS code and sends some malicious data which will then get displayed on the screen, that attack is called cross-site scripting.
 
 It can read cookies, local storage, session storage, get cookies, get info about your device, and read data. JSx takes care of your data.
-
+    
 If some API passes some malicious data JSX will escape it. It prevents cross-site scripting and sanitizes the data before rendering.
-
+    
 **2. Makes code readable:**
-
-JSX makes it easier to write code as we are no longer creating elements using React.createElement()
-
+    JSX makes it easier to write code as we are no longer creating elements using React.createElement()
+    
 **3. Makes code simple and elegant**
-
+    
 **4. Show more useful errors and warnings**
-
-**5. JSX prevents code injections (attacks)**
+    
+ **5. JSX prevents code injections (attacks)**
 
 
 
@@ -329,7 +328,75 @@ const HomePage1 = () => {
 ```
 
 
-## Keeping list items in order with key
+## Q) How to keep list items in order with key?
+
+You need to give each array item a key — a string or a number that uniquely identifies it among other items in that array:
+
+```<li key={person.id}>...</li>```
+
+Keys tell React which array item each component corresponds to, so that it can match them up later. This becomes important if your array items can move (e.g. due to sorting), get inserted, or get deleted. A well-chosen key helps React infer what exactly has happened, and make the correct updates to the DOM tree.
+
+Rather than generating keys on the fly, you should include them in your data.
+
+***Example***
+```js
+// render people name
+const HomePage = () => {
+
+    const people = [{
+        id: 0, // Used in JSX as a key
+        name: 'Creola Katherine Johnson',
+        profession: 'mathematician',
+      }, {
+        id: 1, // Used in JSX as a key
+        name: 'Mario José Molina-Pasquel Henríquez',
+        profession: 'chemist',
+      }, {
+        id: 2, // Used in JSX as a key
+        name: 'Mohammad Abdus Salam',
+        profession: 'physicist',
+      }, {
+        id: 3, // Used in JSX as a key
+        name: 'Percy Lavon Julian',
+        profession: 'chemist',
+      }, {
+        id: 4, // Used in JSX as a key
+        name: 'Subrahmanyan Chandrasekhar',
+        profession: 'astrophysicist',
+      }];
+      
+    return (
+        <>
+        {
+            people.map((item) => {
+                return (
+                    <li key={item.id}>
+                        {item.name}
+                    </li>
+                )
+            })
+
+        }
+
+        </>
+    )
+}
+```
+
+## Q) Where to get your key 
+Different sources of data provide different sources of keys:
+
+**Data from a database:** If your data is coming from a database, you can use the database keys/IDs, which are unique by nature.
+
+**Locally generated data:** If your data is generated and persisted locally (e.g. notes in a note-taking app), use an incrementing counter, crypto.randomUUID() or a package like uuid when creating items.
+
+## Q) What are the Rules of keys 
+Keys must be unique among siblings. However, it’s okay to use the same keys for JSX nodes in different arrays. Keys must not change or that defeats their purpose! Don’t generate them while rendering.
+
+## Q) Why does React need keys? 
+Imagine that files on your desktop didn’t have names. Instead, you’d refer to them by their order — the first file, the second file, and so on. You could get used to it, but once you delete a file, it would get confusing. The second file would become the first file, the third file would be the second file, and so on.
+
+File names in a folder and JSX keys in an array serve a similar purpose. They let us uniquely identify an item between its siblings. A well-chosen key provides more information than the position within the array. Even if the position changes due to reordering, the key lets React identify the item throughout its lifetime.
 
 
 
