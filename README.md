@@ -304,7 +304,29 @@ JSX makes it easier to write code as we are no longer creating elements using Re
 
 
 
+## Q) What is React.Fragment: 
+React Fragment works like an empty tag.
 
+Or to get rid of using React.Fragment we can use an empty tag directly in JSX. ```<>``` is the shorthand expression of React. Fragment. It works like the same.
+
+```js
+const HomePage = () => {
+    return (
+        <React.Fragment>
+
+        </React.Fragment>
+    )
+}
+
+const HomePage1 = () => {
+    return (
+        <>
+
+        </>
+    )
+}
+
+```
 
 
 
