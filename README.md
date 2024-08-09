@@ -239,6 +239,21 @@ or
 ```{Title()}```
 
 
+## Q) What is Components Composition?
+- A component inside a component.
+- Calling a component inside another component is Component Composition.
+
+```
+const Title = () => <h1>Namaste React</h1>
+
+const HeadingComponent = () => (
+    <div id="container">
+        <Title />
+    </div>
+)
+```
+
+
 
 
 
