@@ -103,19 +103,50 @@ Everything but not the Node package manager. npm does not have a full form.
 
 
 
-## package.json:
+## Q) What is package.json:
 Package.json file is a configuration for NPM. Whatever packages our project needs, we install those packages using.
-
 ```npm install <packageName>.```
 
-Once package installation is complete, their versions and
-configuration related information is stored as dependencies
-inside package.json file.
+Once package installation is complete, their versions and configuration related information is stored as dependencies inside package.json file.
+
+**1.Project Configuration:**
+
+package.json serves as a manifest file for Node projects, containing metadata about the project and its dependencies.
+
+It includes information such as the project name, version, entry point, scripts, and dependencies.
+
+**2.Dependency Management:**
+
+Dependencies are listed in the “dependencies” section, specifying the packages required for the project to run.
+
+**3.Version Management:**
+
+Versions of dependencies may be specified with ***semantic versioning*** (SemVer) rules in the package.json.
+
+![image](https://github.com/user-attachments/assets/0edff042-2c2c-40a1-8779-e55d916a048a)
+
+
 
 ## package-lock.json:
 Package-lock.json locks the exact version of packages being used in the project.
 
-## Q ) What is difference between package.json and package.lock.json?
-In package. json we have information about generic version of installed packages whereas in package.lock.json we have information about the specific or exact version of installed packages.
+**1. Dependency Locking:**
+
+package-lock.json is an auto-generated file that provides a detailed, deterministic record of the dependency tree.
+It locks down the specific versions of every installed package(dependencies and sub-dependencies), preventing unintended updates.
+
+**2. Version Consistency:**
+
+This file ensures that every developer working on the project, as well as the CI/CD system, uses the exact same versions of dependencies.
+
+**3. Improved Installation Speed:**
+
+package-lock.json optimizes dependency installation by storing a flat node_modules structure, reducing the need for deep dependency resolution during installation.
+This results in faster and more reliable installations.
 
 
+## Q ) What is the difference between package.json and package.lock.json?
+In package.json we have information about the generic version of installed packages whereas in package.lock.json we have information about the specific or exact version of installed packages.
+
+## What is node_modules:
+Which gets installed is like a database for the npm. Every dependency in node_module will have its package.json. Node modules are very heavy so we should always put this in git ignore.
