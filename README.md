@@ -103,6 +103,19 @@ Everything but not the Node package manager. npm does not have a full form.
 
 
 
+## package.json:
+Package.json file is a configuration for NPM. Whatever packages our project needs, we install those packages using.
 
+```npm install <packageName>.```
+
+Once package installation is complete, their versions and
+configuration related information is stored as dependencies
+inside package.json file.
+
+## package-lock.json:
+Package-lock.json locks the exact version of packages being used in the project.
+
+## Q ) What is difference between package.json and package.lock.json?
+In package. json we have information about generic version of installed packages whereas in package.lock.json we have information about the specific or exact version of installed packages.
 
 
