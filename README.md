@@ -513,8 +513,72 @@ check the official docs - [https://react.dev/reference/rules/rules-of-hooks](htt
   - Call Hooks from React function components.
   - Call Hooks from custom Hooks.
 
+## Q) What is Conditional Rendering: 
+Your components will often need to display different things depending on different conditions. In React, you can conditionally render JSX using JavaScript syntax like if statements, &&, and ? : operators.
+
+**Conditionally returning JSX**:
+
+```js
+if (isPacked) {
+  return <li className="item">{name} ✔</li>;
+}
+return <li className="item">{name}</li>;
+```
+
+**Conditionally returning nothing with null**:
+
+```js
+if (isPacked) {
+  return null;
+}
+return <li className="item">{name}</li>;
+```
+
+**Conditional (ternary) operator (? :)**
+
+```js
+return (
+  <li className="item">
+    {isPacked ? name + ' ✔' : name}
+  </li>
+);
+```
+
+**Logical AND operator (&&)**
+
+```js
+return (
+    <>
+       {
+            isHuman &&
+            (
+                <h2>He is a human</h2>
+            )
+        }
+    </>
+)
+```
+
+## Q) React is often praised for its speed, have you ever wondered why? 🤔
+
+At the core lies React-Fiber - a powerhouse reimplementation of React's algorithm. The goal of React Fiber is to increase its suitability for areas like animation, layout, and gestures. Its headline feature is incremental rendering: the ability to split rendering work into chunks and spread it out over multiple frames.
+
+These days, we can use JavaScript and React alongside popular libraries like GSAP (GreenSock Animation Platform) and Three.js.
 
 
+These tools allow us to create animations and 3D designs using the capabilities of JavaScript and React.
+
+**But how does it all work behind the scenes?**
+
+When you create elements in React, you're actually creating virtual DOM objects. These virtual replicas are synced with the real DOM, a process known as "Reconciliation" or the React "diffing" algorithm.
+
+Essentially, every rendering cycle compares the new UI blueprint (updated VDOM) with the old one (previous VDOM) and makes precise changes to the actual DOM accordingly.
+
+It's important to understand these fundamentals in order to unlock a world of possibilities for front-end developers!
+
+Do you want to understand and dive deep into it?
+
+Take a look at this awesome React Fiber architecture repository on the web: https://github.com/acdlite/react-fiber-architecture
 
 
 
