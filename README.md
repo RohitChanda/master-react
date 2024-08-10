@@ -446,9 +446,56 @@ When we have components at same level and if a new component comes on the first 
 ***Note:*** Never use index as keys in map. It is not recommended.
 
 
+## Q) Understanding Export and Import in React.
+
+Two types of export/import in React, We will understand each of them in detail.
+
+**1.Default export/import**.
+
+```js
+// Syntax
+export default Header;
+
+// Or we can write with extension.
+export default Header.js;
+
+
+// import Syntax
+import Header from "./components/Header"
 
 
 
+```
+
+**2.Named export/import.**
+
+just write the ‘ export ’ keyword before the variables we want to export.
+
+```js
+//export
+export const About = () => {
+    return (
+        <>
+        </>
+    )
+}
+
+//Another way of export
+const About = () => {
+    return (
+        <>
+        About
+        </>
+    )
+}
+export {
+    About
+}
+
+
+//import
+import { About } from "./About";
+```
 
 
 
