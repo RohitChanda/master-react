@@ -496,7 +496,22 @@ export {
 //import
 import { About } from "./About";
 ```
+## Q) What are the Rules of Hooks?
+Hooks are a new addition in React 16.8. They let you use state and other React features without writing a class.
 
+Hooks are defined using JavaScript functions, but they represent a special type of reusable UI logic with restrictions on where they can be called.
+
+Functions whose names start with use are called Hooks in React.
+
+check the official docs - [https://react.dev/reference/rules/rules-of-hooks](https://react.dev/reference/rules/rules-of-hooks);
+
+- [Only call Hooks at the top level](https://react.dev/reference/rules/rules-of-hooks#only-call-hooks-at-the-top-level)
+  - Call them at the top level in the body of a function component.
+  - Call them at the top level in the body of a custom Hook.
+    
+- [Only call Hooks from React functions](https://react.dev/reference/rules/rules-of-hooks#only-call-hooks-from-react-functions)
+  - Call Hooks from React function components.
+  - Call Hooks from custom Hooks.
 
 
 
