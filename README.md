@@ -332,7 +332,6 @@ const HomePage1 = () => {
 
 You need to give each array item a key — a string or a number that uniquely identifies it among other items in that array:
 
-```<li key={person.id}>...</li>```
 
 Keys tell React which array item each component corresponds to, so that it can match them up later. This becomes important if your array items can move (e.g. due to sorting), get inserted, or get deleted. A well-chosen key helps React infer what exactly has happened, and make the correct updates to the DOM tree.
 
@@ -441,6 +440,10 @@ Keys must be unique among siblings. However, it’s okay to use the same keys fo
 Imagine that files on your desktop didn’t have names. Instead, you’d refer to them by their order — the first file, the second file, and so on. You could get used to it, but once you delete a file, it would get confusing. The second file would become the first file, the third file would be the second file, and so on.
 
 File names in a folder and JSX keys in an array serve a similar purpose. They let us uniquely identify an item between its siblings. A well-chosen key provides more information than the position within the array. Even if the position changes due to reordering, the key lets React identify the item throughout its lifetime.
+
+When we have components at same level and if a new component comes on the first without ID, DOM is going to re-render all the components again. As DOM can’t identify where to place it. But if we give each of them a unique ID then react knows where to put that component according to the ID. It is a good optimization and performance thing.
+
+***Note:*** Never use index as keys in map. It is not recommended.
 
 
 
